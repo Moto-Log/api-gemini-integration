@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  banco:
+    image: postgres
+    container_name: bd
+    environment:
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: database
+      POSTGRES_USER: gab
+    ports:
+      - "5432:5432"
+  
+  # back:
+  #   image: api:v1.0
+  #   container_name: api
+  #   env_file: 
+  #     backend.env
+  #   ports:
+  #     - "3050:3050"
+  #   depends_on:
+  #     - banco
+
+networks:
+  default:
+    driver: bridge
